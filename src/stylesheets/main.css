@@ -1,0 +1,20 @@
+
+.header-item {
+  background-color: #eee;
+  padding: 5px;
+  width: 200px;
+  height: 30px;
+  margin: 5px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.header-bar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  height: 50px;
+  width: 500px;
+  padding-bottom: 20px;
+}

@@ -1,0 +1,23 @@
+<div class='.editor-container'>
+  <p>Something something something</p>
+  <button class="fetch-all">Fetch</button>
+  <button class="fetch-single">Fetch ID 1</button>
+
+  <h1>MODELS</h1>
+  <div class='.model-list'>
+    {{#each models}}
+    <ul>
+      <li>
+        <span>ID = {{id}}</span>
+      </li>
+      <li>
+        <span>Value =</span>
+        <input type="text" modelId="{{id}}" modelField="value" value="{{value}}"/>
+      </li>
+      <li>
+        <button modelId="{{id}}" class="save">SAVE</button>
+      </li>
+    </ul>
+    {{/each}}
+  </div>
+</div>

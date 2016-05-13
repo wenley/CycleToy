@@ -1,0 +1,51 @@
+
+NOTE: .do() != .subscribe()
+The former returns another Observable, while the latter returns a subscription.
+The former preserves temperature, whithe latter turns cold to hot.
+
+NOTE:
+- HTTP Requests: Must have a DOM effect (or other non-dependent driver),
+or else request will never be triggered
+  - All requests must have their responses be observed.
+  - Can I just subscribe and throw-away the responses? YES
+  - Needs to have a subscriber somewhere; either by chaining responses into another driver, or by explicit subscribe
+  - Seems maybe surprising? If you want to trigger a server-side effect, how to get that to happen?
+  - maybe always observe for errors, to be able to report to user?
+  - If truly fire-and-forget, then need to subscribe to responses explicitly without doing anything to results
+
+NOTE:
+What happens if same DOM flow rendered twice to page?
+- Apparently, they act independently. Data flow is not preserved between the two renderings.
+  - FALSE - flatMap was the wrong operator to use; disregard
+
+Toys:
+- Hello world - DONE
+- Counter - DONE
+- Input field
+
+- Form builder for cycle?
+  - Are forms really correct? Built-in side-effects from the HTML
+
+
+Accomplishments:
+- Install all the things (Cycle, HTTP)
+- Components, combining and re-use - Looks good
+- Swapping between distinct views - looks good
+- Template rendering -> Why? What is good about templates?
+  -> Can see layout without behavior
+  - Seems good!
+  - Want to pull in Ember bind-attr, but just a technical challenge
+- State? How to manage?
+  - Global (i.e. persisted to backend) vs. Local, different best practices?
+  - Global kept at top of data flow, synced to incoming HTTP responses
+  - local is wherever needed? Page-/component-specific local?
+
+Open questions of Niceness:
+- Would like to re-implement something like Ember bind-attr, maybe not necessary?
+- Transitions / Animations when view changes
+- Component-ize global shared state?
+- Dynamic CSS -> part of state?
+- Modals - how?
+- Sheets - how?
+
+

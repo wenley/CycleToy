@@ -1,0 +1,42 @@
+{
+  "name": "cycle-toy",
+  "version": "0.0.1",
+  "description": "Exploration of building a full production website in Cycle.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "npm run browserify && npm run handlebars",
+    "prehandlebars": "mkdirp dist",
+    "handlebars": "handlebars src/templates -f dist/templates.js",
+    "prebrowserify": "mkdirp dist",
+    "browserify": "browserify src/index.js -t babelify --outfile dist/main.js",
+    "start": "npm install && npm run compile && echo 'Open index.html in browser'",
+    "open": "npm run compile && open index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wenley/CycleToy.git"
+  },
+  "keywords": [
+    "cycle",
+    "dashboard"
+  ],
+  "author": "wenley",
+  "license": "MIT",
+  "dependencies": {
+    "@cycle/core": "^6.0.3",
+    "@cycle/dom": "^9.4.0",
+    "@cycle/http": "^8.2.2",
+    "@cycle/isolate": "^1.2.1",
+    "cycle-time-travel": "^0.1.2",
+    "handlebars": "^4.0.5",
+    "html-to-vdom": "^0.7.0",
+    "rx": "^4.1.0",
+    "virtual-dom": "^2.1.1"
+  },
+  "devDependencies": {
+    "browserify": "11.0.1",
+    "babelify": "6.1.x",
+    "mkdirp": "0.5.x"
+  }
+}
