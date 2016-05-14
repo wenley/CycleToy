@@ -21,7 +21,7 @@ What happens if same DOM flow rendered twice to page?
 Toys:
 - Hello world - DONE
 - Counter - DONE
-- Input field
+- Input field - DONE
 
 - Form builder for cycle?
   - Are forms really correct? Built-in side-effects from the HTML
@@ -38,12 +38,12 @@ Accomplishments:
 - State? How to manage?
   - Global (i.e. persisted to backend) vs. Local, different best practices?
   - Global kept at top of data flow, synced to incoming HTTP responses
-  - local is wherever needed? Page-/component-specific local?
+  - local is wherever needed? Page-/component-specific local state?
 
 Open questions of Niceness:
+- Component-ize global shared state?
 - Would like to re-implement something like Ember bind-attr, maybe not necessary?
 - Transitions / Animations when view changes
-- Component-ize global shared state?
 - Dynamic CSS -> part of state?
 - Modals - how?
 - Sheets - how?
